@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nüra | Lo simple, cuando es real</title>
   <meta name="description" content="Nüra es una marca conceptual de yogur natural premium desarrollada en 2026 por estudiantes de la Universidad Loyola Andalucía." />
+
   <style>
     :root {
       --bg: #F4EDD9;
@@ -15,12 +16,7 @@
       --green: #7A8F63;
       --green-soft: #A8B79A;
       --green-light: #E7EDE2;
-      --white-soft: #FFF9EE;
       --berry: #8B3155;
-      --strawberry: #E8B7B1;
-      --lemon: #F3E2A3;
-      --blueberry: #C7BDD9;
-      --winter: #D8C48F;
       --shadow: rgba(58, 53, 47, 0.13);
     }
 
@@ -36,7 +32,6 @@
     }
 
     a { color: inherit; text-decoration: none; }
-    img { width: 100%; display: block; object-fit: cover; }
 
     .serif, h1, h2, h3, .logo {
       font-family: "Times New Roman", Times, serif;
@@ -79,9 +74,6 @@
       color: var(--text-soft);
     }
 
-    .menu a { transition: color 0.3s ease; }
-    .menu a:hover { color: var(--text); }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -92,13 +84,12 @@
       line-height: 1;
       border: 1px solid transparent;
       cursor: pointer;
-      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+      transition: transform 0.3s ease, background 0.3s ease;
       white-space: nowrap;
     }
 
     .btn:hover { transform: scale(1.02); }
     .btn-primary { background: var(--text); color: white; }
-    .btn-primary:hover { background: #2A2621; }
     .btn-secondary { background: transparent; border-color: var(--text); color: var(--text); }
 
     .hero {
@@ -140,31 +131,18 @@
 
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
-    .hero-image {
-      position: relative;
-      min-height: 650px;
-      border-radius: 2px;
-      overflow: hidden;
-      background: var(--sand);
+    .image-box {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       box-shadow: 0 32px 80px var(--shadow);
     }
 
-    .hero-image::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      background: linear-gradient(130deg, rgba(255,255,255,0.16), transparent 45%);
-      pointer-events: none;
-    }
-
-    .hero-photo {
-      height: 100%;
-      min-height: inherit;
-      background:
-        linear-gradient(135deg, rgba(58,53,47,0.03), rgba(122,143,99,0.10)),
-        url('https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1400&q=85') center/cover;
-      filter: saturate(0.78) contrast(0.96) sepia(0.08);
+    .hero-image {
+      min-height: 650px;
+      background-image:
+        linear-gradient(135deg, rgba(255,255,255,0.12), rgba(122,143,99,0.08)),
+        url("WhatsApp Image 2026-04-30 at 15.43.52.jpeg");
     }
 
     section { padding: 110px 0; }
@@ -204,10 +182,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.3s ease;
     }
-
-    .value-card:hover { transform: translateY(-4px); }
 
     .value-card span {
       font-size: 12px;
@@ -221,139 +196,107 @@
 
     .flavors-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
     .flavor-card {
       background: var(--bg-secondary);
       padding: 18px;
-      min-height: 430px;
+      min-height: 500px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       border: 1px solid rgba(58, 53, 47, 0.08);
-      transition: transform 0.3s ease;
     }
-
-    .flavor-card:hover { transform: scale(1.02); }
 
     .flavor-img {
-      height: 300px;
-      background: var(--sand);
+      height: 380px;
       margin-bottom: 22px;
-      position: relative;
-      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-    .flavor-img::before {
-      content: "";
-      position: absolute;
-      width: 130px;
-      height: 176px;
-      left: 50%;
-      top: 52%;
-      transform: translate(-50%, -50%);
-      border-radius: 44px 44px 36px 36px;
-      background: var(--cream, #fff8ea);
-      box-shadow: inset 0 0 0 1px rgba(58,53,47,0.08), 0 22px 40px rgba(58,53,47,0.12);
+    .flavor-card h3 { font-size: 32px; }
+    .flavor-card p { color: var(--text-soft); font-size: 14px; margin-top: 6px; }
+
+    .natural-img {
+      background-image: url("WhatsApp Image 2026-04-30 at 15.30.52 (1).jpeg");
     }
 
-    .flavor-img::after {
-      content: "nüra";
-      position: absolute;
-      left: 50%;
-      top: 54%;
-      transform: translate(-50%, -50%);
-      font-family: "Times New Roman", Times, serif;
-      font-size: 30px;
-      color: rgba(58, 53, 47, 0.42);
+    .fresa-img {
+      background-image: url("WhatsApp Image 2026-04-30 at 15.44.15.jpeg");
     }
 
-    .natural { --cream: #fff9ef; }
-    .fresa { --cream: #E8B7B1; }
-    .limon { --cream: #F3E2A3; }
-    .arandanos { --cream: #C7BDD9; }
-    .pistacho-color { --cream: #A8B79A; }
-    .canela { --cream: #D7B98A; }
-    .coco { --cream: #FFF4E4; }
-    .melocoton { --cream: #EFC49E; }
-
-    .flavor-card h3 { font-size: 30px; }
-    .flavor-card p { color: var(--text-soft); font-size: 13px; margin-top: 6px; }
+    .limon-img {
+      background-image: url("WhatsApp Image 2026-04-30 at 15.44.39.jpeg");
+    }
 
     .seasonal {
       background: var(--bg);
       padding-top: 70px;
     }
 
-    .season-tabs {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-      margin-bottom: 32px;
+    .season-block {
+      margin-bottom: 58px;
     }
 
-    .season-tab {
-      padding: 18px;
-      border: 1px solid rgba(58, 53, 47, 0.12);
-      background: rgba(237, 227, 207, 0.52);
+    .season-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(58, 53, 47, 0.14);
+      padding-bottom: 14px;
     }
 
-    .season-tab strong {
-      display: block;
-      font-family: "Times New Roman", Times, serif;
-      font-size: 24px;
-      font-weight: 400;
-      margin-bottom: 4px;
+    .season-title h3 {
+      font-size: 42px;
     }
 
-    .season-tab span {
+    .season-title span {
       color: var(--text-soft);
-      font-size: 12px;
-      letter-spacing: 0.06em;
+      font-size: 13px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .season-grid {
+    .season-flavors {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
-    .season-card {
-      min-height: 250px;
-      padding: 24px;
-      border: 1px solid rgba(58, 53, 47, 0.09);
+    .season-flavor-card {
       background: rgba(237, 227, 207, 0.58);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      border: 1px solid rgba(58, 53, 47, 0.09);
+      padding: 18px;
     }
 
-    .season-card.highlight {
-      background: var(--green-light);
-      border-color: rgba(122, 143, 99, 0.25);
+    .season-img {
+      height: 360px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-bottom: 18px;
     }
 
-    .season-card .dot {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--dot, var(--green));
-      margin-bottom: 26px;
-      box-shadow: 0 14px 26px rgba(58,53,47,0.12);
+    .season-flavor-card h4 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 30px;
+      font-weight: 400;
     }
 
-    .season-card h3 {
-      font-size: 32px;
-      margin-bottom: 6px;
-    }
-
-    .season-card p {
-      color: var(--text-soft);
-      font-size: 14px;
-    }
+    .arandanos-img { background-image: url("Nüra arándanos.png"); }
+    .frambuesa-img { background-image: url("Nüra frambuesa.png"); }
+    .albaricoque-img { background-image: url("Nüra albaricoque.png"); }
+    .melocoton-img { background-image: url("Nüra melocotón.png"); }
+    .higos-img { background-image: url("Nüra higos.png"); }
+    .pera-img { background-image: url("Nüra pera.png"); }
+    .naranja-img { background-image: url("nüra naranja.png"); }
+    .chocolate-img { background-image: url("nüra chocolate.png"); }
 
     .process { background: var(--bg-secondary); }
 
@@ -366,11 +309,9 @@
 
     .process-photo {
       min-height: 560px;
-      background:
+      background-image:
         linear-gradient(120deg, rgba(244,237,217,0.1), rgba(58,53,47,0.04)),
-        url('https://images.unsplash.com/photo-1528750997573-59b89d56f4f7?auto=format&fit=crop&w=1200&q=85') center/cover;
-      filter: saturate(0.78) contrast(0.96) sepia(0.08);
-      box-shadow: 0 32px 70px var(--shadow);
+        url("WhatsApp Image 2026-04-30 at 15.30.51.jpeg");
     }
 
     .process-copy h2 {
@@ -442,26 +383,9 @@
 
     .pistachio-visual {
       min-height: 520px;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(122,143,99,0.42) 0 10%, transparent 11%),
-        radial-gradient(circle at 42% 45%, #D8C48F 0 7%, transparent 8%),
-        radial-gradient(circle at 58% 55%, #9AA96F 0 6%, transparent 7%),
-        linear-gradient(135deg, #EDE3CF, #F4EDD9);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pistachio-visual::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 230px;
-      height: 130px;
-      transform: translate(-50%, -50%) rotate(-16deg);
-      border-radius: 60% 48% 55% 45%;
-      background: linear-gradient(135deg, #D5BC87 0 32%, #8C9B58 33% 62%, #C8AA73 63% 100%);
-      box-shadow: 0 30px 55px rgba(58,53,47,0.16);
+      background-image:
+        linear-gradient(135deg, rgba(255,255,255,0.10), rgba(122,143,99,0.08)),
+        url("WhatsApp Image 2026-04-30 at 15.30.52.jpeg");
     }
 
     .pistachio-copy span {
@@ -508,15 +432,15 @@
       color: rgba(244, 237, 217, 0.76);
     }
 
-    .footer-links a { transition: opacity 0.3s ease; }
-    .footer-links a:hover { opacity: 0.7; }
-
     @media (max-width: 920px) {
       .menu { display: none; }
-      .hero-grid, .section-head, .process-grid, .pistachio-card, .footer-grid, .insight-grid { grid-template-columns: 1fr; }
+      .hero-grid, .section-head, .process-grid, .pistachio-card, .footer-grid, .insight-grid {
+        grid-template-columns: 1fr;
+      }
+
       .hero { padding-top: 100px; }
       .hero-image, .process-photo, .pistachio-visual { min-height: 420px; }
-      .values, .flavors-grid, .season-grid, .season-tabs { grid-template-columns: 1fr; }
+      .values, .flavors-grid, .season-flavors { grid-template-columns: 1fr; }
       section { padding: 78px 0; }
       .footer-links { justify-content: flex-start; flex-wrap: wrap; }
     }
@@ -527,11 +451,13 @@
       .nav .btn { display: none; }
       .hero-actions { flex-direction: column; align-items: stretch; }
       .btn { width: 100%; }
-      .value-card, .flavor-card, .season-card, .pistachio-card { padding: 24px; }
+      .value-card, .flavor-card, .season-flavor-card, .pistachio-card { padding: 24px; }
       .hero-image, .process-photo, .pistachio-visual { min-height: 360px; }
+      .flavor-img, .season-img { height: 320px; }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
@@ -559,9 +485,7 @@
             <a class="btn btn-secondary" href="#proceso">Conocer el proceso</a>
           </div>
         </div>
-        <div class="hero-image" aria-label="Imagen emocional de yogur natural con luz cálida">
-          <div class="hero-photo"></div>
-        </div>
+        <div class="hero-image image-box" aria-label="Imagen principal de Nüra"></div>
       </div>
     </section>
 
@@ -571,6 +495,7 @@
           <h2>Ingredientes reales. Sin más.</h2>
           <p>Nüra nace desde una idea sencilla: hacer yogur con menos ruido y más intención. Ingredientes reconocibles, textura cremosa y una estética cuidada sin perder autenticidad.</p>
         </div>
+
         <div class="values">
           <article class="value-card">
             <span>01</span>
@@ -579,6 +504,7 @@
               <p>Ingredientes simples que respetan el sabor auténtico.</p>
             </div>
           </article>
+
           <article class="value-card">
             <span>02</span>
             <div>
@@ -586,6 +512,7 @@
               <p>Una selección cuidada para un producto cremoso, equilibrado y honesto.</p>
             </div>
           </article>
+
           <article class="value-card">
             <span>03</span>
             <div>
@@ -601,35 +528,31 @@
       <div class="container">
         <div class="section-head">
           <h2>Sabores base, todo el año.</h2>
-          <p>La colección permanente de Nüra está formada por sabores reconocibles, sencillos y coherentes con una propuesta premium pero cercana.</p>
+          <p>La colección permanente de Nüra está formada por tres sabores reconocibles, sencillos y coherentes con una propuesta premium pero cercana.</p>
         </div>
+
         <div class="flavors-grid">
           <article class="flavor-card">
-            <div class="flavor-img natural" aria-hidden="true"></div>
+            <div class="flavor-img natural-img"></div>
             <div>
               <h3>Natural</h3>
               <p>La esencia de Nüra. Cremoso, limpio, directo.</p>
             </div>
           </article>
+
           <article class="flavor-card">
-            <div class="flavor-img fresa" aria-hidden="true"></div>
+            <div class="flavor-img fresa-img"></div>
             <div>
               <h3>Fresa</h3>
               <p>Suave, reconocible y con sabor a fruta real.</p>
             </div>
           </article>
+
           <article class="flavor-card">
-            <div class="flavor-img limon" aria-hidden="true"></div>
+            <div class="flavor-img limon-img"></div>
             <div>
               <h3>Limón</h3>
               <p>Fresco, ligero y pensado para acompañar lo cotidiano.</p>
-            </div>
-          </article>
-          <article class="flavor-card">
-            <div class="flavor-img arandanos" aria-hidden="true"></div>
-            <div>
-              <h3>Arándanos</h3>
-              <p>Más profundo, delicado y con un punto ligeramente ácido.</p>
             </div>
           </article>
         </div>
@@ -639,65 +562,89 @@
     <section class="seasonal" id="temporadas">
       <div class="container">
         <div class="section-head">
-          <h2>Sabores que siguen la temporada.</h2>
-          <p>Además de su gama base, Nüra explora sabores estacionales para dinamizar la marca, responder a tendencias y crear momentos de consumo más especiales.</p>
+          <h2>Sabores de temporada.</h2>
+          <p>Además de la gama base, Nüra propone sabores estacionales que acompañan cada momento del año con una estética natural, cuidada y coherente con la marca.</p>
         </div>
 
-        <div class="season-tabs" aria-label="Calendario estacional de sabores Nüra">
-          <div class="season-tab"><strong>Base</strong><span>Todo el año</span></div>
-          <div class="season-tab"><strong>Primavera</strong><span>Marzo · Mayo</span></div>
-          <div class="season-tab"><strong>Verano</strong><span>Junio · Agosto</span></div>
-          <div class="season-tab"><strong>Otoño</strong><span>Septiembre · Noviembre</span></div>
-          <div class="season-tab"><strong>Invierno</strong><span>Diciembre · Febrero</span></div>
+        <div class="season-block">
+          <div class="season-title">
+            <h3>Primavera</h3>
+            <span>Marzo · Abril · Mayo</span>
+          </div>
+          <div class="season-flavors">
+            <article class="season-flavor-card">
+              <div class="season-img arandanos-img"></div>
+              <h4>Arándanos</h4>
+            </article>
+            <article class="season-flavor-card">
+              <div class="season-img frambuesa-img"></div>
+              <h4>Frambuesa</h4>
+            </article>
+          </div>
         </div>
 
-        <div class="season-grid">
-          <article class="season-card" style="--dot:#fff9ef">
-            <div>
-              <div class="dot"></div>
-              <h3>Base permanente</h3>
-              <p>Natural, fresa, limón y arándanos. Sabores simples para cualquier momento del año.</p>
-            </div>
-          </article>
-          <article class="season-card" style="--dot:#E8B7B1">
-            <div>
-              <div class="dot"></div>
-              <h3>Primavera</h3>
-              <p>Frambuesa y flor de azahar. Más fresco, más ligero, más luminoso.</p>
-            </div>
-          </article>
-          <article class="season-card" style="--dot:#F3E2A3">
-            <div>
-              <div class="dot"></div>
-              <h3>Verano</h3>
-              <p>Melocotón y coco. Sabores suaves para días largos y pausas frías.</p>
-            </div>
-          </article>
-          <article class="season-card" style="--dot:#D7B98A">
-            <div>
-              <div class="dot"></div>
-              <h3>Otoño</h3>
-              <p>Canela y pera. Una colección más cálida, cremosa y de transición.</p>
-            </div>
-          </article>
-          <article class="season-card highlight" style="--dot:#7A8F63">
-            <div>
-              <div class="dot"></div>
-              <h3>Invierno</h3>
-              <p>Pistacho edición limitada. Un sabor premium, ocasional y pensado como pequeño capricho.</p>
-            </div>
-          </article>
+        <div class="season-block">
+          <div class="season-title">
+            <h3>Verano</h3>
+            <span>Junio · Julio · Agosto</span>
+          </div>
+          <div class="season-flavors">
+            <article class="season-flavor-card">
+              <div class="season-img albaricoque-img"></div>
+              <h4>Albaricoque</h4>
+            </article>
+            <article class="season-flavor-card">
+              <div class="season-img melocoton-img"></div>
+              <h4>Melocotón</h4>
+            </article>
+          </div>
+        </div>
+
+        <div class="season-block">
+          <div class="season-title">
+            <h3>Otoño</h3>
+            <span>Septiembre · Octubre · Noviembre</span>
+          </div>
+          <div class="season-flavors">
+            <article class="season-flavor-card">
+              <div class="season-img higos-img"></div>
+              <h4>Higos</h4>
+            </article>
+            <article class="season-flavor-card">
+              <div class="season-img pera-img"></div>
+              <h4>Pera</h4>
+            </article>
+          </div>
+        </div>
+
+        <div class="season-block">
+          <div class="season-title">
+            <h3>Invierno</h3>
+            <span>Diciembre · Enero · Febrero</span>
+          </div>
+          <div class="season-flavors">
+            <article class="season-flavor-card">
+              <div class="season-img naranja-img"></div>
+              <h4>Naranja</h4>
+            </article>
+            <article class="season-flavor-card">
+              <div class="season-img chocolate-img"></div>
+              <h4>Chocolate</h4>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="process" id="proceso">
       <div class="container process-grid">
-        <div class="process-photo" aria-label="Proceso artesanal de elaboración de yogur"></div>
+        <div class="process-photo image-box" aria-label="Proceso cuidado de elaboración de yogur"></div>
+
         <div class="process-copy">
           <span class="eyebrow">Proceso</span>
           <h2>Hecho sin prisa.</h2>
           <p>Procesos cuidados, ingredientes sencillos y una textura cremosa pensada para pequeños momentos de pausa.</p>
+
           <div class="steps">
             <div class="step">
               <span class="step-number">01</span>
@@ -706,6 +653,7 @@
                 <p>Una base limpia, sin fórmulas innecesarias.</p>
               </div>
             </div>
+
             <div class="step">
               <span class="step-number">02</span>
               <div>
@@ -713,6 +661,7 @@
                 <p>La cremosidad no se fuerza: se cuida.</p>
               </div>
             </div>
+
             <div class="step">
               <span class="step-number">03</span>
               <div>
@@ -731,10 +680,12 @@
           <div class="number">80%</div>
           <p>consume yogur con frecuencia, varias veces por semana o a diario.</p>
         </article>
+
         <article class="insight-card">
           <div class="number">90%</div>
           <p>asocia el envase de cristal con mayor calidad.</p>
         </article>
+
         <article class="insight-card">
           <div class="number">+50%</div>
           <p>estaría dispuesto a probar el yogur de pistacho.</p>
@@ -744,7 +695,8 @@
 
     <section class="pistachio" id="pistacho">
       <div class="container pistachio-card">
-        <div class="pistachio-visual" aria-label="Pistacho natural abierto sobre fondo claro"></div>
+        <div class="pistachio-visual image-box" aria-label="Nüra pistacho edición limitada"></div>
+
         <div class="pistachio-copy">
           <span>Lanzamiento de invierno</span>
           <h2>Pistacho. Edición limitada.</h2>
@@ -761,8 +713,9 @@
         <div class="logo">nüra</div>
         <p>Nüra es una marca conceptual desarrollada en 2026 por estudiantes de la Universidad Loyola Andalucía.</p>
       </div>
+
       <div class="footer-links">
-        <a href="#">Instagram</a>
+        <a href="https://www.instagram.com/nura.yogur/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="mailto:info@nura-yogur.com">Contacto</a>
         <a href="#">Proyecto académico</a>
       </div>
@@ -770,4 +723,3 @@
   </footer>
 </body>
 </html>
-
