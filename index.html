@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nüra | Lo simple, cuando es real</title>
+  <meta name="description" content="Nüra es una marca conceptual de yogur natural premium desarrollada en 2026 por estudiantes de la Universidad Loyola Andalucía." />
+  <style>
+    :root {
+      --bg: #F4EDD9;
+      --bg-secondary: #EDE3CF;
+      --sand: #E6D8C3;
+      --text: #3A352F;
+      --text-soft: #7A746C;
+      --green: #7A8F63;
+      --green-soft: #A8B79A;
+      --green-light: #E7EDE2;
+      --white-soft: #FFF9EE;
+      --berry: #8B3155;
+      --strawberry: #E8B7B1;
+      --lemon: #F3E2A3;
+      --shadow: rgba(58, 53, 47, 0.13);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { width: 100%; display: block; object-fit: cover; }
+
+    .serif,
+    h1,
+    h2,
+    h3,
+    .logo {
+      font-family: "Times New Roman", Times, serif;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(244, 237, 217, 0.84);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(58, 53, 47, 0.08);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .logo {
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      color: var(--text-soft);
+    }
+
+    .menu a { transition: color 0.3s ease; }
+    .menu a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      padding: 12px 24px;
+      font-size: 13px;
+      line-height: 1;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: scale(1.02); }
+
+    .btn-primary {
+      background: var(--text);
+      color: white;
+    }
+
+    .btn-primary:hover { background: #2A2621; }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--text);
+      color: var(--text);
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 118px;
+      display: grid;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--green);
+    }
+
+    h1 {
+      font-size: clamp(58px, 8vw, 118px);
+      line-height: 0.9;
+      max-width: 760px;
+      margin-bottom: 26px;
+    }
+
+    .hero p {
+      max-width: 490px;
+      color: var(--text-soft);
+      font-size: 17px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      position: relative;
+      min-height: 650px;
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--sand);
+      box-shadow: 0 32px 80px var(--shadow);
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(130deg, rgba(255,255,255,0.16), transparent 45%);
+      pointer-events: none;
+    }
+
+    .hero-photo {
+      height: 100%;
+      min-height: inherit;
+      background:
+        linear-gradient(135deg, rgba(58,53,47,0.03), rgba(122,143,99,0.10)),
+        url('https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1400&q=85') center/cover;
+      filter: saturate(0.78) contrast(0.96) sepia(0.08);
+    }
+
+    section { padding: 110px 0; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.75fr 1fr;
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 54px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(42px, 5vw, 76px);
+      line-height: 0.98;
+    }
+
+    .section-head p {
+      max-width: 580px;
+      color: var(--text-soft);
+      font-size: 16px;
+    }
+
+    .philosophy { background: var(--bg-secondary); }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .value-card {
+      min-height: 250px;
+      padding: 32px;
+      background: rgba(244, 237, 217, 0.72);
+      border: 1px solid rgba(58, 53, 47, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+
+    .value-card:hover { transform: translateY(-4px); }
+
+    .value-card span {
+      font-size: 12px;
+      color: var(--green);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .value-card h3 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .value-card p {
+      color: var(--text-soft);
+      font-size: 14px;
+    }
+
+    .flavors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .flavor-card {
+      background: var(--bg-secondary);
+      padding: 18px;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid rgba(58, 53, 47, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .flavor-card:hover { transform: scale(1.02); }
+
+    .flavor-img {
+      height: 300px;
+      background: var(--sand);
+      margin-bottom: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flavor-img::before {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 176px;
+      left: 50%;
+      top: 52%;
+      transform: translate(-50%, -50%);
+      border-radius: 44px 44px 36px 36px;
+      background: var(--cream, #fff8ea);
+      box-shadow: inset 0 0 0 1px rgba(58,53,47,0.08), 0 22px 40px rgba(58,53,47,0.12);
+    }
+
+    .flavor-img::after {
+      content: "nüra";
+      position: absolute;
+      left: 50%;
+      top: 54%;
+      transform: translate(-50%, -50%);
+      font-family: "Times New Roman", Times, serif;
+      font-size: 30px;
+      color: rgba(58, 53, 47, 0.42);
+    }
+
+    .natural { --cream: #fff9ef; }
+    .fresa { --cream: #E8B7B1; }
+    .limon { --cream: #F3E2A3; }
+
+    .flavor-card h3 { font-size: 30px; }
+
+    .flavor-card p {
+      color: var(--text-soft);
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .process { background: var(--bg-secondary); }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .process-photo {
+      min-height: 560px;
+      background:
+        linear-gradient(120deg, rgba(244,237,217,0.1), rgba(58,53,47,0.04)),
+        url('https://images.unsplash.com/photo-1528750997573-59b89d56f4f7?auto=format&fit=crop&w=1200&q=85') center/cover;
+      filter: saturate(0.78) contrast(0.96) sepia(0.08);
+      box-shadow: 0 32px 70px var(--shadow);
+    }
+
+    .process-copy h2 {
+      font-size: clamp(46px, 5vw, 78px);
+      line-height: 0.96;
+      margin-bottom: 26px;
+    }
+
+    .process-copy p {
+      color: var(--text-soft);
+      max-width: 510px;
+      margin-bottom: 34px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 18px 0;
+      border-top: 1px solid rgba(58, 53, 47, 0.12);
+    }
+
+    .step-number {
+      color: var(--green);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .step p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .insight {
+      background: var(--berry);
+      color: var(--bg);
+      padding: 88px 0;
+    }
+
+    .insight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    .insight-card {
+      padding: 30px;
+      border: 1px solid rgba(244, 237, 217, 0.22);
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .insight-card .number {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 62px;
+      line-height: 1;
+    }
+
+    .insight-card p {
+      color: rgba(244, 237, 217, 0.76);
+      font-size: 14px;
+    }
+
+    .pistachio {
+      background: var(--green-light);
+      padding: 130px 0;
+    }
+
+    .pistachio-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 58px;
+      align-items: center;
+      background: rgba(244, 237, 217, 0.42);
+      border: 1px solid rgba(58, 53, 47, 0.08);
+      padding: 42px;
+    }
+
+    .pistachio-visual {
+      min-height: 520px;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(122,143,99,0.42) 0 10%, transparent 11%),
+        radial-gradient(circle at 42% 45%, #D8C48F 0 7%, transparent 8%),
+        radial-gradient(circle at 58% 55%, #9AA96F 0 6%, transparent 7%),
+        linear-gradient(135deg, #EDE3CF, #F4EDD9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pistachio-visual::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 230px;
+      height: 130px;
+      transform: translate(-50%, -50%) rotate(-16deg);
+      border-radius: 60% 48% 55% 45%;
+      background: linear-gradient(135deg, #D5BC87 0 32%, #8C9B58 33% 62%, #C8AA73 63% 100%);
+      box-shadow: 0 30px 55px rgba(58,53,47,0.16);
+    }
+
+    .pistachio-copy span {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+    }
+
+    .pistachio-copy h2 {
+      font-size: clamp(54px, 7vw, 104px);
+      line-height: 0.86;
+      margin: 18px 0 28px;
+    }
+
+    .pistachio-copy p {
+      color: var(--text-soft);
+      max-width: 520px;
+      margin-bottom: 34px;
+    }
+
+    footer {
+      padding: 68px 0 42px;
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+    }
+
+    footer .logo {
+      font-size: 44px;
+      margin-bottom: 18px;
+    }
+
+    footer p {
+      color: rgba(244, 237, 217, 0.72);
+      max-width: 560px;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 24px;
+      font-size: 13px;
+      color: rgba(244, 237, 217, 0.76);
+    }
+
+    .footer-links a { transition: opacity 0.3s ease; }
+    .footer-links a:hover { opacity: 0.7; }
+
+    @media (max-width: 920px) {
+      .menu { display: none; }
+      .hero-grid,
+      .section-head,
+      .process-grid,
+      .pistachio-card,
+      .footer-grid,
+      .insight-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 100px; }
+      .hero-image,
+      .process-photo,
+      .pistachio-visual { min-height: 420px; }
+      .values,
+      .flavors-grid { grid-template-columns: 1fr; }
+      section { padding: 78px 0; }
+      .footer-links { justify-content: flex-start; flex-wrap: wrap; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .logo { font-size: 30px; }
+      .nav .btn { display: none; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .value-card,
+      .flavor-card,
+      .pistachio-card { padding: 24px; }
+      .hero-image,
+      .process-photo,
+      .pistachio-visual { min-height: 360px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="logo" aria-label="Nüra inicio">nüra</a>
+      <nav class="menu" aria-label="Navegación principal">
+        <a href="#filosofia">Filosofía</a>
+        <a href="#sabores">Sabores</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#pistacho">Pistacho</a>
+      </nav>
+      <a href="#filosofia" class="btn btn-primary">Descubrir Nüra</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Yogur natural premium</span>
+          <h1>Lo simple, cuando es real.</h1>
+          <p>Yogures naturales elaborados con ingredientes reales, pensados para pequeños momentos de pausa dentro del día.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#sabores">Descubrir Nüra</a>
+            <a class="btn btn-secondary" href="#proceso">Conocer el proceso</a>
+          </div>
+        </div>
+        <div class="hero-image" aria-label="Imagen emocional de yogur natural con luz cálida">
+          <div class="hero-photo"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy" id="filosofia">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ingredientes reales. Sin más.</h2>
+          <p>Nüra nace desde una idea sencilla: hacer yogur con menos ruido y más intención. Ingredientes reconocibles, textura cremosa y una estética cuidada sin perder autenticidad.</p>
+        </div>
+        <div class="values">
+          <article class="value-card">
+            <span>01</span>
+            <div>
+              <h3>Naturalidad</h3>
+              <p>Ingredientes simples que respetan el sabor auténtico.</p>
+            </div>
+          </article>
+          <article class="value-card">
+            <span>02</span>
+            <div>
+              <h3>Calidad</h3>
+              <p>Una selección cuidada para un producto cremoso, equilibrado y honesto.</p>
+            </div>
+          </article>
+          <article class="value-card">
+            <span>03</span>
+            <div>
+              <h3>Bienestar cotidiano</h3>
+              <p>Pequeños momentos de pausa dentro de una rutina real.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sabores">
+      <div class="container">
+        <div class="section-head">
+          <h2>Sabores de siempre, hechos con intención.</h2>
+          <p>Natural, fresa y limón forman la gama base de Nüra: sabores reconocibles, sencillos y coherentes con una propuesta premium pero cercana.</p>
+        </div>
+        <div class="flavors-grid">
+          <article class="flavor-card">
+            <div class="flavor-img natural" aria-hidden="true"></div>
+            <div>
+              <h3>Natural</h3>
+              <p>La esencia de Nüra. Cremoso, limpio, directo.</p>
+            </div>
+          </article>
+          <article class="flavor-card">
+            <div class="flavor-img fresa" aria-hidden="true"></div>
+            <div>
+              <h3>Fresa</h3>
+              <p>Suave, reconocible y con sabor a fruta real.</p>
+            </div>
+          </article>
+          <article class="flavor-card">
+            <div class="flavor-img limon" aria-hidden="true"></div>
+            <div>
+              <h3>Limón</h3>
+              <p>Fresco, ligero y pensado para acompañar lo cotidiano.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="proceso">
+      <div class="container process-grid">
+        <div class="process-photo" aria-label="Proceso artesanal de elaboración de yogur"></div>
+        <div class="process-copy">
+          <span class="eyebrow">Proceso</span>
+          <h2>Hecho sin prisa.</h2>
+          <p>Procesos cuidados, ingredientes sencillos y una textura cremosa pensada para pequeños momentos de pausa.</p>
+          <div class="steps">
+            <div class="step">
+              <span class="step-number">01</span>
+              <div>
+                <strong>Ingredientes sencillos</strong>
+                <p>Una base limpia, sin fórmulas innecesarias.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-number">02</span>
+              <div>
+                <strong>Tiempo y textura</strong>
+                <p>La cremosidad no se fuerza: se cuida.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-number">03</span>
+              <div>
+                <strong>Envase de cristal</strong>
+                <p>Un elemento clave para reforzar calidad, cuidado y percepción premium.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="insight" aria-label="Insights de investigación">
+      <div class="container insight-grid">
+        <article class="insight-card">
+          <div class="number">80%</div>
+          <p>consume yogur con frecuencia, varias veces por semana o a diario.</p>
+        </article>
+        <article class="insight-card">
+          <div class="number">90%</div>
+          <p>asocia el envase de cristal con mayor calidad.</p>
+        </article>
+        <article class="insight-card">
+          <div class="number">+50%</div>
+          <p>estaría dispuesto a probar el yogur de pistacho.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="pistachio" id="pistacho">
+      <div class="container pistachio-card">
+        <div class="pistachio-visual" aria-label="Pistacho natural abierto sobre fondo claro"></div>
+        <div class="pistachio-copy">
+          <span>Lanzamiento de invierno</span>
+          <h2>Pistacho. Edición limitada.</h2>
+          <p>Una propuesta de invierno para probar algo distinto sin salir de lo simple. Un lanzamiento controlado para medir su aceptación real y valorar si puede convertirse en una referencia recurrente de invierno.</p>
+          <a href="mailto:info@nura-yogur.com?subject=Quiero%20saber%20cuándo%20llega%20Nüra%20Pistacho" class="btn btn-primary">Mantente informado</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="logo">nüra</div>
+        <p>Nüra es una marca conceptual desarrollada en 2026 por estudiantes de la Universidad Loyola Andalucía.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="mailto:info@nura-yogur.com">Contacto</a>
+        <a href="#">Proyecto académico</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
