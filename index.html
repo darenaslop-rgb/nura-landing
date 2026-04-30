@@ -33,7 +33,7 @@
 
     a { color: inherit; text-decoration: none; }
 
-    .serif, h1, h2, h3, .logo {
+    h1, h2, h3, h4, .logo {
       font-family: "Times New Roman", Times, serif;
       font-weight: 400;
       letter-spacing: -0.025em;
@@ -73,6 +73,8 @@
       letter-spacing: 0.03em;
       color: var(--text-soft);
     }
+
+    .menu a:hover { color: var(--text); }
 
     .btn {
       display: inline-flex;
@@ -238,9 +240,7 @@
       padding-top: 70px;
     }
 
-    .season-block {
-      margin-bottom: 58px;
-    }
+    .season-block { margin-bottom: 58px; }
 
     .season-title {
       display: flex;
@@ -252,9 +252,7 @@
       padding-bottom: 14px;
     }
 
-    .season-title h3 {
-      font-size: 42px;
-    }
+    .season-title h3 { font-size: 42px; }
 
     .season-title span {
       color: var(--text-soft);
@@ -284,9 +282,7 @@
     }
 
     .season-flavor-card h4 {
-      font-family: "Times New Roman", Times, serif;
       font-size: 30px;
-      font-weight: 400;
     }
 
     .arandanos-img { background-image: url("Nüra arándanos.png"); }
@@ -432,9 +428,17 @@
       color: rgba(244, 237, 217, 0.76);
     }
 
+    .footer-links a:hover { opacity: 0.7; }
+
     @media (max-width: 920px) {
       .menu { display: none; }
-      .hero-grid, .section-head, .process-grid, .pistachio-card, .footer-grid, .insight-grid {
+
+      .hero-grid,
+      .section-head,
+      .process-grid,
+      .pistachio-card,
+      .footer-grid,
+      .insight-grid {
         grid-template-columns: 1fr;
       }
 
@@ -447,13 +451,108 @@
 
     @media (max-width: 560px) {
       .container { width: min(100% - 28px, 1180px); }
+
       .logo { font-size: 30px; }
+
+      .nav {
+        height: 70px;
+      }
+
       .nav .btn { display: none; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .btn { width: 100%; }
-      .value-card, .flavor-card, .season-flavor-card, .pistachio-card { padding: 24px; }
-      .hero-image, .process-photo, .pistachio-visual { min-height: 360px; }
-      .flavor-img, .season-img { height: 320px; }
+
+      .hero {
+        min-height: auto;
+        padding-top: 110px;
+        padding-bottom: 55px;
+      }
+
+      h1 {
+        font-size: 48px;
+        line-height: 0.92;
+      }
+
+      .hero p {
+        font-size: 15px;
+        margin-bottom: 24px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-image,
+      .process-photo,
+      .pistachio-visual {
+        min-height: 320px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .section-head {
+        gap: 22px;
+        margin-bottom: 34px;
+      }
+
+      .section-head h2 {
+        font-size: 42px;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .value-card,
+      .flavor-card,
+      .season-flavor-card,
+      .pistachio-card {
+        padding: 24px;
+      }
+
+      .flavor-card {
+        min-height: auto;
+      }
+
+      .flavor-img,
+      .season-img {
+        height: 270px;
+      }
+
+      .season-block {
+        margin-bottom: 42px;
+      }
+
+      .season-title {
+        display: block;
+      }
+
+      .season-title h3 {
+        font-size: 34px;
+        margin-bottom: 4px;
+      }
+
+      .pistachio-card {
+        gap: 30px;
+      }
+
+      .pistachio-copy h2 {
+        font-size: 52px;
+      }
+
+      .footer-grid {
+        gap: 24px;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
